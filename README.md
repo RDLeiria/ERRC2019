@@ -9,6 +9,9 @@ Oficina ministrada na Escola Regional de Redes de Computadores (ERRC - 2019).
 ## Slides
 http://links.leiria.inf.br/errc2019-slides
 
+## Acesso a Nuvem
+http://scherm.leiria.inf.br/
+
 ## Instalação
 ```
 sudo -s
@@ -49,9 +52,6 @@ enable_plugin \"devstack-plugin-container\" \"https://github.com/openstack/devst
 cat local.conf
 ./stack.sh
 ```
-
-## Acesso a Nuvem
-http://scherm.leiria.inf.br/
 
 ## Gerenciamento
 ```
