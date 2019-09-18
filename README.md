@@ -50,6 +50,9 @@ cat local.conf
 ./stack.sh
 ```
 
+## Acesso a Nuvem
+http://scherm.leiria.inf.br/
+
 ## Gerenciamento
 ```
 su - stack
