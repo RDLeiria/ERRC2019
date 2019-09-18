@@ -3,6 +3,7 @@ Oficina ministrada na Escola Regional de Redes de Computadores (ERRC - 2019).
 
 ### Versões
 > Ubuntu Server 16.04 64 Bits
+
 > OpenStack Rocky
 
 ## Slides
