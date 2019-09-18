@@ -3,7 +3,9 @@ http://links.leiria.inf.br/errc2019-slides
 
 # Instalação
 adduser --disabled-password --gecos "stack,666,666,666" stack
+
 echo "stack:stack" | chpasswd
+
 echo "stack ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 curl -fsSL https://get.docker.com/ | sh # Run as root
 usermod -aG docker stack
