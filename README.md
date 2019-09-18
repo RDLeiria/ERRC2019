@@ -1,10 +1,10 @@
 # Virtualização através de containers para plataformas de computação em nuvem
 Oficina ministrada na Escola Regional de Redes de Computadores (ERRC - 2019).
 
-# Slides
+## Slides
 http://links.leiria.inf.br/errc2019-slides
 
-# Instalação
+## Instalação
 ```
 adduser --disabled-password --gecos "stack,666,666,666" stack
 echo "stack:stack" | chpasswd
@@ -44,7 +44,7 @@ cat local.conf
 ./stack.sh
 ```
 
-# Gerenciamento
+## Gerenciamento
 ```
 su - stack
 source devstack/openrc admin admin
