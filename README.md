@@ -2,10 +2,9 @@
 http://links.leiria.inf.br/errc2019-slides
 
 # Instalação
+```
 adduser --disabled-password --gecos "stack,666,666,666" stack
-
 echo "stack:stack" | chpasswd
-
 echo "stack ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 curl -fsSL https://get.docker.com/ | sh # Run as root
 usermod -aG docker stack
@@ -40,6 +39,7 @@ enable_plugin \"kuryr-libnetwork\" \"https://github.com/openstack/kuryr-libnetwo
 enable_plugin \"devstack-plugin-container\" \"https://github.com/openstack/devstack-plugin-container\" \"stable/rocky\"" > local.conf
 cat local.conf
 ./stack.sh
+```
 
 # Gerenciamento
 su - stack
