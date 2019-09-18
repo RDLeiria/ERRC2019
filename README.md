@@ -42,6 +42,7 @@ cat local.conf
 ```
 
 # Gerenciamento
+```
 su - stack
 source devstack/openrc admin admin
 openstack appcontainer service list
@@ -57,3 +58,4 @@ zun run -i --name Test02 ubuntu /bin/bash
 zun image-list
 zun delete Test01
 zun delete Test02
+```
