@@ -6,10 +6,11 @@ http://links.leiria.inf.br/errc2019-slides
 
 ## Instalação
 ```
+sudo -s
 adduser --disabled-password --gecos "stack,666,666,666" stack
 echo "stack:stack" | chpasswd
 echo "stack ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-curl -fsSL https://get.docker.com/ | sh # Run as root
+curl -fsSL https://get.docker.com/ | sh
 usermod -aG docker stack
 su - stack
 git clone "https://github.com/openstack/devstack.git" -b "stable/rocky" "devstack"
