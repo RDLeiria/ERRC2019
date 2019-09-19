@@ -57,17 +57,63 @@ cat local.conf
 ```
 su - stack
 source devstack/openrc admin admin
-openstack appcontainer service list
-openstack appcontainer host list
-zun host-show 172-17-2-84
-zun create --name Test01 cirros ping -c 4 8.8.8.8
-zun list
-docker ps -a
-zun start Test01
-zun logs Test01
-zun pull ubuntu 172-17-2-84
-zun run -i --name Test02 ubuntu /bin/bash
+zun --version
+zun host-list
+zun host-show "172-17-2-84"
+zun service-list
+
 zun image-list
-zun delete Test01
-zun delete Test02
+zun pull "ubuntu:18.04" "172-17-2-84"
+zun image-list
+zun image-show "c275edee-a958-42fd-bcb5-1c580092fd91"
+zun image-search "ubuntu"
+zun help image-search
+docker search "ubuntu"
+wget -q https://registry.hub.docker.com/v1/repositories/ubuntu/tags -O - | jq -r ".[].name"
+zun image-delete "c275edee-a958-42fd-bcb5-1c580092fd91" "172-17-2-84"
+zun image-list
+
+zun run --name "Test01" "ubuntu" "ls" # Create, execute & stop
+zun list # Wait for it stops
+zun logs "Test01"
+zun show "Test01"
+zun list
+zun start "Test01"
+zun logs "Test01"
+zun list
+
+zun run -i --name "Test02" "ubuntu:16.04" "/bin/bash" # Create, execute, interact & stop
+zun list # Wait for it stops
+zun start "Test02"
+zun list
+zun stats "Test02"
+zun exec -i "Test02" "/bin/bash"
+zun restart "Test02"
+zun show "Test02" | grep "status "
+zun top "Test02"
+zun pause "Test02"
+zun show "Test02" | grep "status "
+zun unpause "Test02"
+zun show "Test02" | grep "status "
+zun delete "Test02"
+zun stop "Test02"
+zun delete "Test02"
+zun list
+
+zun create --name "Test03" "ubuntu" # Just create
+zun start "Test03" # Start && stop
+zun list
+zun exec -i "Test03" "/bin/bash"
+zun logs "Test03"
+zun delete "Test03"
+zun list
+
+zun run -i --name "Test04" "ubuntu:16.04" "/bin/bash" # Create, execute, interact & stop
+zun list # Wait for it stops
+zun start "Test04"
+zun commit "Test04" "local/commited-image:0.0.1"
+docker image list
+zun image-list
+zun run -i --name "Test05" "local/commited-image:0.0.1" "/bin/bash" # Create, execute, interact & stop
+zun list
 ```
