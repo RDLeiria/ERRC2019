@@ -1,6 +1,9 @@
 # Virtualização através de containers para plataformas de computação em nuvem
 Oficina ministrada na Escola Regional de Redes de Computadores (ERRC - 2019).
 
+## Contato
+raul.leiria@acad.pucrs.br
+
 ### Versões de softwares utilizadas
 > Ubuntu Server 16.04 64 Bits
 
