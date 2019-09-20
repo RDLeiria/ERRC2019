@@ -113,8 +113,7 @@ zun list
 
 zun run -i --name "Test04" "ubuntu:16.04" "/bin/bash" # Create, execute, interact & stop
 zun list # Wait for it stops
-zun start "Test04"
-zun commit "Test04" "local/commited-image:0.0.1"
+zun commit "Test04" "local/commited-image:0.0.1" # Container must be stopped
 docker image list
 zun image-list
 zun run -i --name "Test05" "local/commited-image:0.0.1" "/bin/bash" # Create, execute, interact & stop
